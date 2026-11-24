@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CrossBorder Campus — 双城护照 · 留学生生活助手</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <div class="brand-mark">✈</div>
+    <div>
+      <h1>CrossBorder Campus</h1>
+      <p>双城护照 · 留学生生活助手 — SLAY HACKS 2026</p>
+    </div>
+  </div>
+  <label class="demo-toggle" title="演示模式：使用虚构演示数据，编辑已停用">
+    <span>演示模式</span>
+    <span class="switch"><input type="checkbox" id="demoToggle" checked><span class="slider"></span></span>
+    <span id="demoState" class="demo-state on">开 · 林小满</span>
+  </label>
+</header>
+
+<div id="demoBanner" class="demo-banner">
+  <strong>演示数据 · 非真实个人信息</strong>
+  <span>当前显示的是虚构学生「林小满」的演示数据，所有金额、日期均为示例。编辑已停用。如需记自己的账，请关闭演示模式，数据只保存在本机浏览器，不会上传。</span>
+</div>
+
+<nav class="tabs" role="tablist" aria-label="功能分区">
+  <button class="tab active" data-tab="overview" role="tab">总览</button>
+  <button class="tab" data-tab="coach" role="tab">AI 教练</button>
+  <button class="tab" data-tab="fx" role="tab">换汇</button>
+  <button class="tab" data-tab="expenses" role="tab">记账</button>
+  <button class="tab" data-tab="checklist" role="tab">待办</button>
+  <button class="tab" data-tab="pack" role="tab">参赛包</button>
+</nav>
+
+<main>
+  <!-- ============ 1. OVERVIEW ============ -->
+  <section id="tab-overview" class="panel active">
+    <div class="boarding-pass">
+      <div class="bp-head">
+        <span class="bp-airline">CROSSBORDER CAMPUS</span>
+        <span class="bp-class">BOARDING PASS · 登机牌</span>
+      </div>
+      <div class="bp-route">
+        <div class="bp-city"><strong>SIN</strong><span>新加坡</span><small>Singapore</small></div>
+        <div class="bp-flight">
+          <div class="bp-line"><span class="bp-plane">✈</span></div>
+          <small>双城旅程 · Two-city journey</small>
+        </div>
+        <div class="bp-city"><strong>PEK</strong><span>北京</span><small>Beijing</small></div>
+        <div class="bp-flight">
+          <div class="bp-line"><span class="bp-plane">✈</span></div>
+          <small>返程 · Return</small>
+        </div>
+        <div class="bp-city"><strong>SIN</strong><span>新加坡</span><small>Singapore</small></div>
+      </div>
+      <div class="bp-perforation" aria-hidden="true"></div>
+      <div class="bp-stub">
+        <div><small>乘客 PASSENGER</small><strong>林小满 · LIN XIAOMAN（演示）</strong></div>
+        <div><small>舱位 CLASS</small><strong>双城经济舱</strong></div>
+        <div><small>登机口 GATE</small><strong>演示模式</strong></div>
+      </div>
+    </div>
+
+    <div class="count-grid">
+      <div class="count-card">
+        <span class="count-num" id="cdReturn">68</span>
+        <span class="count-label">天后回国</span>
+        <small>演示日期 · 按今日 +68 天计算</small>
+      </div>
+      <div class="count-card">
+        <span class="count-num" id="cdBack">250</span>
+        <span class="count-label">天后返新</span>
+        <small>演示日期 · 按今日 +250 天计算</small>
+      </div>
+      <div class="count-card">
+        <span class="count-num">480</span>
+        <span class="count-label">签证剩余（天）</span>
+        <small>演示数字 · 非真实签证状态</small>
+      </div>
+    </div>
+
+    <div class="card-row">
+      <div class="card ring-card">
+        <h2>本月钱袋</h2>
+        <div class="ring-wrap">
+          <svg class="ring" viewBox="0 0 120 120" width="132" height="132" role="img" aria-label="本月预算使用进度">
+            <circle cx="60" cy="60" r="52" fill="none" stroke="#e8edf3" stroke-width="11"/>
+            <circle id="ringArc" cx="60" cy="60" r="52" fill="none" stroke="#0e7c7b" stroke-width="11"
+              stroke-linecap="round" stroke-dasharray="326.7" stroke-dashoffset="130.7" transform="rotate(-90 60 60)"/>
+            <text x="60" y="58" text-anchor="middle" class="ring-pct" id="ringPct">60%</text>
+            <text x="60" y="76" text-anchor="middle" class="ring-sub">已用预算</text>
+          </svg>
+          <div class="ring-legend">
+            <p><span class="dot teal"></span>本月演示预算 <strong id="budgetTotal">S$1,500</strong></p>
+            <p><span class="dot amber"></span>已花 <strong id="budgetSpent">S$900</strong></p>
+            <p><span class="dot navy"></span>还剩 <strong id="budgetLeft">S$600</strong></p>
+            <p class="muted">以上均为虚构演示数字。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>三程资金计划（演示）</h2>
+        <ol class="plan">
+          <li><strong>第一程 · 新加坡</strong><span>留出活期缓冲，按演示预算执行日常开销。</span></li>
+          <li><strong>第二程 · 回国</strong><span>把回国期间要用的钱换成人民币，留意一次性返现门槛。</span></li>
+          <li><strong>第三程 · 返新</strong><span>提前留好返校后的第一个月开销，避免落地就缺钱。</span></li>
+        </ol>
+        <p class="muted">三程划分是产品设计，金额均为演示示例，不构成理财建议。</p>
+      </div>
+    </div>
+    <p class="footnote">本页所有数字均为虚构演示数据，仅用于展示产品功能。</p>
+  </section>
+
+  <!-- ============ 2. AI COACH ============ -->
+  <section id="tab-coach" class="panel">
+    <div class="card">
+      <h2>AI 预算教练</h2>
+      <p class="muted">在完整版里，教练会把匿名汇总数字发给服务端大模型做推理，只返回结构化建议。本页是同一逻辑的<strong>本地规则演示版</strong>：不联网、不上传，计算全部在本机完成。</p>
+      <div class="form-grid">
+        <label>本月总收入（S$，演示）
+          <input type="number" id="coachIncome" value="1800" min="0" step="10">
+        </label>
+        <label>本月已花（S$，演示）
+          <input type="number" id="coachSpent" value="900" min="0" step="10">
+        </label>
+        <label>下月固定开销（S$，演示）
+          <input type="number" id="coachFixed" value="1100" min="0" step="10">
+        </label>
+        <label>想问教练的问题（可选）
+          <input type="text" id="coachQuestion" placeholder="例如：这个月还能花多少？" maxlength="120">
+        </label>
+      </div>
+      <button id="coachBtn" class="btn-primary">让教练给建议</button>
+      <p class="muted small">演示模式下输入框为只读，显示的是林小满的演示数字。关闭演示模式后可输入自己的数字（仅存本机）。</p>
+    </div>
+    <div id="coachResult" class="card coach-result" hidden>
+      <p class="eyebrow">教练建议 · 基于你输入的汇总数字</p>
+      <h3 id="coachHeadline"></h3>
+      <p id="coachSummary"></p>
+      <ol id="coachTips"></ol>
+      <div class="today-action"><strong>今天就能做的一件事：</strong><span id="coachAction"></span></div>
+      <p class="muted small" id="coachBasedOn"></p>
+    </div>
+  </section>
+
+  <!-- ============ 3. FX ============ -->
+  <section id="tab-fx" class="panel">
+    <div class="card">
+      <h2>实时汇率 · SGD → CNY</h2>
+      <div class="fx-rate">
+        <span class="fx-big">1 新币 = <strong id="fxRate">5.17</strong> 人民币</span>
+        <span id="fxMeta" class="muted small">正在拉取实时汇率…</span>
+      </div>
+      <div class="form-grid">
+        <label>换多少新币（S$）
+          <input type="number" id="fxAmount" value="1000" min="0" step="10">
+        </label>
+        <label>到手人民币（约）
+          <input type="text" id="fxOut" readonly value="¥5,170">
+        </label>
+      </div>
+      <p class="muted small">汇率来自 ExchangeRate-API（open.er-api.com）。离线时自动用 5.17 作为演示兜底值，页面会注明。</p>
+    </div>
+    <div class="card">
+      <h2>DBS Remit 到支付宝 · 返现测算</h2>
+      <p class="muted">一次性返现规则（演示用公开规则，具体以银行官方页面为准）：单笔 ≥ S$300 返 S$12；单笔 ≥ S$1,500 返 S$60；每人限一次。</p>
+      <div class="form-grid">
+        <label>计划单笔转账（S$）
+          <input type="number" id="remitAmount" value="1500" min="0" step="10">
+        </label>
+        <label>预计返现
+          <input type="text" id="remitOut" readonly value="S$60">
+        </label>
+      </div>
+      <p id="remitNote" class="remit-note">达到 S$1,500 门槛，可拿满 S$60 一次性返现。换汇前请先确认银行实时汇率与到账时间。</p>
+      <p class="muted small">提醒：不要为了返现多换不需要的人民币；返校后还需要新币时，换回来会有二次汇损。</p>
+    </div>
+  </section>
+
+  <!-- ============ 4. EXPENSES ============ -->
+  <section id="tab-expenses" class="panel">
+    <div class="card">
+      <h2>记一笔</h2>
+      <div class="form-grid">
+        <label>金额
+          <input type="number" id="expAmount" value="" placeholder="例如 12.5" min="0" step="0.01">
+        </label>
+        <label>币种
+          <select id="expCurrency"><option value="SGD">SGD 新币</option><option value="CNY">CNY 人民币</option></select>
+        </label>
+        <label>分类
+          <select id="expCategory">
+            <option>餐饮</option><option>交通</option><option>住宿</option>
+            <option>学习</option><option>娱乐</option><option>其他</option>
+          </select>
+        </label>
+        <label>备注（可选）
+          <input type="text" id="expNote" placeholder="例如：午饭" maxlength="60">
+        </label>
+      </div>
+      <button id="expAddBtn" class="btn-primary">记下来</button>
+      <p class="muted small">只保存在本机浏览器（localStorage），不上传。演示模式下记账停用，显示的是演示账目。</p>
+    </div>
+    <div class="card">
+      <h2>本月汇总 <span class="muted small" id="expTotalLabel"></span></h2>
+      <div id="expSummary" class="exp-summary"></div>
+      <ul id="expList" class="exp-list"></ul>
+      <p id="expEmpty" class="muted">还没有记账。关掉演示模式后，在上面记第一笔吧。</p>
+    </div>
+  </section>
+
+  <!-- ============ 5. CHECKLIST ============ -->
+  <section id="tab-checklist" class="panel">
+    <div class="card">
+      <h2>重要提醒（演示日期）</h2>
+      <ul id="reminderList" class="todo-list"></ul>
+      <div class="form-grid">
+        <label>新增提醒
+          <input type="text" id="newReminderText" placeholder="例如：买返程机票" maxlength="60">
+        </label>
+        <label>日期（可选）
+          <input type="date" id="newReminderDate">
+        </label>
+      </div>
+      <button id="addReminderBtn" class="btn-primary">加一个提醒</button>
+    </div>
+    <div class="card">
+      <h2>回国清单 / 返新清单</h2>
+      <div class="check-cols">
+        <div>
+          <h3>回国前</h3>
+          <ul id="listReturn" class="todo-list"></ul>
+        </div>
+        <div>
+          <h3>返新前</h3>
+          <ul id="listBack" class="todo-list"></ul>
+        </div>
+      </div>
+      <div class="form-grid">
+        <label>新增清单项
+          <input type="text" id="newCheckText" placeholder="例如：确认宿舍" maxlength="60">
+        </label>
+        <label>放进哪边
+          <select id="newCheckSide"><option value="return">回国前</option><option value="back">返新前</option></select>
+        </label>
+      </div>
+      <button id="addCheckBtn" class="btn-primary">加进清单</button>
+      <p class="muted small">以上均为演示提醒，日期是示例。演示模式下新增和勾选停用。</p>
+    </div>
+  </section>
+
+  <!-- ============ 6. SUBMISSION PACK ============ -->
+  <section id="tab-pack" class="panel">
+    <div class="card">
+      <h2>参赛包 · SLAY HACKS 2026</h2>
+      <p class="muted">按 Devpost 官方页七项提交要求整理。先开演示模式再截图、录视频，避免露出真实信息。</p>
+      <h3>评分权重</h3>
+      <ul class="weights">
+        <li><span>创新与原创 Innovation</span><strong>25%</strong></li>
+        <li><span>技术实现 Technical</span><strong>25%</strong></li>
+        <li><span>真实世界影响 Real World Impact</span><strong>20%</strong></li>
+        <li><span>AI 融合与负责任使用 AI Integration</span><strong>15%</strong></li>
+        <li><span>体验与展示 UX &amp; Presentation</span><strong>15%</strong></li>
+      </ul>
+      <h3>可直接粘贴的英文介绍（Devpost 用）</h3>
+      <textarea id="devpostText" readonly rows="10">CrossBorder Campus is an AI life assistant for international students living between two cities, for example Singapore and China. It shows a boarding-pass style journey, live SGD to CNY rates, budget tracking, and AI budget advice in one place.
+
+Problem: international students juggle two currencies, two timelines, visa deadlines, and budgets in SGD and CNY. Exchange rates move daily, and important dates like return flights, visa expiry, and deadlines are easy to miss.
+
+Solution: a single app with a dual-city timeline with countdowns, a live FX converter with remittance cashback calculation, expense tracking in SGD and CNY, AI budget advice, and reminders and checklists for return and re-entry.
+
+AI: the AI Budget Coach analyses anonymised monthly totals and returns structured saving advice. Live FX data comes from ExchangeRate-API. All demo data is fictional; Demo Mode replaces every amount, date and todo with fictional data for student Lin Xiaoman and disables editing, so no real personal data appears in screenshots or video.</textarea>
+      <button class="btn-primary" data-copy="devpostText">复制英文介绍</button>
+      <span id="copyMsg" class="muted small" role="status"></span>
+      <h3>提交清单</h3>
+      <ul class="pack-check" id="packCheck">
+        <li><label><input type="checkbox"> 开启演示模式，确认界面全是林小满的演示数据</label></li>
+        <li><label><input type="checkbox"> 截 4 张图：总览、AI 教练、换汇、记账/待办</label></li>
+        <li><label><input type="checkbox"> Devpost 填项目名、问题、AI 实现（见上方英文介绍）</label></li>
+        <li><label><input type="checkbox"> 贴 GitHub 仓库链接</label></li>
+        <li><label><input type="checkbox"> 贴演示链接（或注明 live demo 在 Muse 内，附截图）</label></li>
+        <li><label><input type="checkbox"> 视频可选：2–4 分钟，无视频也可提交，有 live demo 即可</label></li>
+        <li><label><input type="checkbox"> 12 月 7 日截止前点 Submit</label></li>
+      </ul>
+      <p class="muted small">截止：2026 年 12 月 7 日；评审 12 月 8–14 日；公布 12 月 16 日。奖金：Grand $2,000、Runner-Up $1,200、3rd $800、Best Beginner Hack $500。</p>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <p>CrossBorder Campus · 静态演示版 · HTML / CSS / JS · 汇率：ExchangeRate-API · 数据只存本机，无真实个人信息。</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
